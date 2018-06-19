@@ -1,0 +1,65 @@
+@import "flexbox";
+
+$sm: 540px;
+$md: 720px;
+$lg: 960px;
+$xl: 1140px;
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: $sm) {
+    max-width: $sm;
+  }
+
+  @media (min-width: $md) {
+    max-width: $md;
+  }
+
+  @media (min-width: $lg) {
+    max-width: $lg;
+  }
+
+  @media (min-width: $xl) {
+    max-width: $xl;
+  }
+}
+
+.row {
+  @include flexbox;
+  margin-right: -10px;
+  margin-left: -10px;
+  flex-wrap: wrap;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  @media (min-width: $sm) {
+    .col-#{$i} {
+      @include flex(0 0 ((100%/12) * $i));
+      max-width: ((100%/12) * $i);
+    }
+  }
+}
+
+.form-inline {
+  @include flexbox;
+  flex-flow: row wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  @include align-items(center);
+}
+
+.less-gutter > [class*="col-"] {
+  padding-left: 3px;
+  padding-right: 3px;
+}

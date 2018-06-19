@@ -1,0 +1,108 @@
+@import '../base/colors';
+
+
+
+.navbar {
+  background-color: $main-color;
+  transition: all 250ms ease;
+  
+  .navbar-container {
+    display: flex;
+    margin: 0;
+    padding: 1em;
+    list-style: none;
+    justify-content: space-between;
+    
+
+    .navbar-item {
+      color: $white-color;
+    }
+  }
+}
+
+
+
+@media (max-width: 575.98px) {
+  .mobile {
+    width: 60px;
+    height: 50px;
+    position: fixed;
+    top: 3%;
+    right: 2%;
+    z-index: 103;
+    cursor: pointer;
+    padding: 10px 0;
+    padding-right: 10px;
+    padding-top: 0;
+  
+    .mobile-item {
+      background-color: $black-color;
+      height: 2px;
+      position: absolute;
+      right: 0;
+      width: 100%;
+      -webkit-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+  
+    .mobile-item:nth-child(2) {
+      top: 9px;
+      width: 80%;
+      -webkit-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+  
+    .mobile-item:nth-child(3) {
+      top: 18px;
+      width: 50%;
+      -webkit-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+  
+    &.active .mobile-item:nth-child(1) {
+      -webkit-transform: translateY(10px) rotate(45deg);
+      -ms-transform: translateY(10px) rotate(45deg);
+      transform: translateY(10px) rotate(45deg);
+    }
+  
+    &.mobile.active .mobile-item:nth-child(2) {
+      opacity: 0;
+    }
+  
+    &.active .mobile-item:nth-child(3) {
+      -webkit-transform: translateY(-8px) rotate(-45deg);
+      -ms-transform: translateY(-8px) rotate(-45deg);
+      transform: translateY(-8px) rotate(-45deg);
+      width: 100%;
+    }
+
+    &.active .mobile-item {
+      background-color: $white-color;
+    }
+  }
+
+
+  .navbar {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(-100%);
+
+    &.active {
+      transform: translateX(0%);
+    }
+
+    .navbar-container {
+      flex-direction: column;
+    }
+
+  }
+  
+
+}
