@@ -1,13 +1,41 @@
 @import 'base/normalize';
 @import 'base/colors';
 @import 'base/columns';
+@import 'base/buttons';
 
 // Components
 @import 'components/navbar';
 @import 'components/label';
 @import 'components/bookscontainer';
+@import 'components/addbookform';
+@import 'components/input';
 
 .my-1 {
   margin-top: 1em;
   margin-bottom: 1em;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.custom-overlay {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.custom-modal {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+  width: 30%;
+}
+
+@media (max-width: 575.98px) {
+  .mt-xs-4 {
+    margin-top: 5em;
+  }
 }

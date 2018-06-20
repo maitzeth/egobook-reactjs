@@ -3,8 +3,8 @@
   max-width: 100%;
   margin-bottom: 1rem;
   background-color: transparent;
-  border-collapse: separate;
-  border-spacing: 5px;
+  /* border-collapse: separate;
+  border-spacing: 5px; */
 }
 
 .table .thead-light th {
@@ -21,4 +21,5 @@
   padding: .75rem;
   vertical-align: top;
   text-align: left;
+  border-top: 1px solid #dee2e6;  
 }

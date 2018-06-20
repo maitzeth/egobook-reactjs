@@ -1,0 +1,79 @@
+@import '../base/colors';
+
+.input-wrapper {
+  margin-bottom: 1em;
+}
+
+.group { 
+  position: relative; 
+  margin-bottom: 2em; 
+
+  input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $gray-color;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ label, &:valid ~ label 		{
+      top:-20px;
+      font-size:13px;
+      color:$gray-color;
+    }
+  }
+
+  label {
+    color:$gray-color; 
+    font-size: 16px;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all; 
+    -moz-transition: 0.2s ease all; 
+    -webkit-transition: 0.2s ease all;
+  }
+
+  .bar { 
+    position: relative; 
+    display: block; 
+    width: 100%; 
+
+    &:before, &:after 	{
+      content: '';
+      height: 1px; 
+      width: 0;
+      bottom: 1px; 
+      position: absolute;
+      background: $main-color; 
+      transition: 0.2s ease all; 
+      -moz-transition: 0.2s ease all; 
+      -webkit-transition: 0.2s ease all;
+    }
+
+    &:before {
+      left: 50%;
+    }
+    &:after {
+      right: 50%; 
+    }
+  }
+}
+
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+.delete-book {
+  cursor: pointer;
+}
+
+.delete-book-td {
+  display: flex;
+  justify-content: space-between;
+}

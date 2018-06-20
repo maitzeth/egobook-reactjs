@@ -93,13 +93,16 @@
     flex-direction: column;
     justify-content: center;
     transform: translateX(-100%);
+    top: 0;
 
     &.active {
       transform: translateX(0%);
     }
 
     .navbar-container {
-      flex-direction: column;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
     }
 
   }
