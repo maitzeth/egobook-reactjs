@@ -33,8 +33,14 @@ class App extends Component {
 
   deleteBook = book => {
     const books = this.state.books;
-    const newBooks = books.slice(0, book).concat(books.slice(book + 1));
-    this.setState({ books: newBooks });
+
+    books.splice(book, 1);
+
+    this.setState({
+      books: books
+    })
+
+
   }
 
   componentDidMount() {
